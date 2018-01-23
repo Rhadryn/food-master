@@ -1,11 +1,18 @@
 package model;
 
+/**
+ * This class represents an ingredient used in a recipe.
+ * Ingredients are also kept in food storage and
+ * refilled via shopping trips.
+ * @author Joshua Bryant
+ *
+ */
 public class Ingredient {
 	/**Name of ingredient*/
 	private String name;
 	/**Amount of ingredient in possession*/
 	private int possession;
-	/**Amount of ingredient recieved on purchase*/
+	/**Amount of ingredient received on purchase*/
 	private int amount;
 	/**Unit of measurement for the ingredient's amount*/
 	private String unit;
@@ -13,7 +20,30 @@ public class Ingredient {
 	private int expiration;
 	/**Cost of purchase*/
 	private double cost;
-	
+	/**
+	 * Default constructor, initializes properties to logical values
+	 */
+	public Ingredient() {
+		name = "";
+		possession = 0;
+		amount = 0;
+		unit = "??";
+		expiration = 0;
+		cost = 0;
+	}
+	/**
+	 * Copy constructor, uses passed object to create object
+	 * @param i Ingredient to copy 
+	 */
+	public Ingredient(Ingredient i) {
+		name = i.getName();
+		possession = i.getPossession();
+		amount = i.getAmount();
+		unit = i.getUnit();
+		expiration = i.getExpiration();
+		cost = i.getCost();
+	}
+	/**
 	/**
 	 * @return the name
 	 */
