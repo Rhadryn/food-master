@@ -5,17 +5,34 @@
  */
 package view;
 
+import java.awt.CardLayout;
+
 /**
  *
- * @author thepr
+ * @author Joshua Bryant
  */
 public class Homeview extends javax.swing.JFrame {
+    //Constants for Card Layout usage
+    final static String MENUPANEL = "Menu Panel";
+    
+    //Constants for size
+    final int PREF_WIDTH = 450;
+    final int PREF_HEIGHT = 350;
+    
+
+    MenuPanel menuPanel;
 
     /**
      * Creates new form Homeview
      */
     public Homeview() {
         initComponents();
+        menuPanel = new MenuPanel();
+        mainPanel.add(menuPanel, MENUPANEL);
+        
+        CardLayout cl = (CardLayout)(mainPanel.getLayout());
+        cl.show(mainPanel, MENUPANEL);
+        this.setSize(PREF_WIDTH, PREF_HEIGHT);
     }
 
     /**
@@ -27,17 +44,21 @@ public class Homeview extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainPanel = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        mainPanel.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 461, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +100,6 @@ public class Homeview extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 }

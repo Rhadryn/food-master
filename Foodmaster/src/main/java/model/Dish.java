@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class Dish {
     /**Contains the types of dishes*/
-    public enum dishType{
+    public static enum dishType{
         UNDEFINED,      //For debug or placeholder purposes
         APPETIZER,      //The dish is a good for starting
         ENTREE,         //The dish is the main portion of a meal
